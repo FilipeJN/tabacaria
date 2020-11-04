@@ -10,9 +10,6 @@ void relatoriodeVendas (produto * vendidos);
 /* exibe o nome dos produtos e o preço */
 void exibepreco(produto * estoque);
 
-/* exibe um relatorio sobre as vendas */
-void relatorioVendas(produto * vendidos);
-
 /* exibe um relatorio sobre o estoque */
 void relatorioEstoque(produto * estoque);
 

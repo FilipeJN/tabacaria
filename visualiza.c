@@ -24,7 +24,7 @@ void exibepreco(produto * estoque){
   }else{
     for(i = 0; i<n;i++){
       printf("Codigo produto: %ld \n", estoque[i].codigo);
-      printf("Nome do produto: %s \n", estoque[i].nome);
+      printf("Nome do produto: %s", estoque[i].nome);
       printf("Preço do produto: %.2f\n\n", estoque[i].preco_venda);
     } 
   }
@@ -65,7 +65,7 @@ void menuRelatorios(produto * estoque, produto * vendidos){
 			break;
 
 			case 3:
-			  exibepreco(estoque)	;				
+			  	exibepreco(estoque)	;				
 			break;
 
 

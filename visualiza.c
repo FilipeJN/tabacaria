@@ -19,11 +19,15 @@ void relatoriodeVendas (produto * vendidos)
 void exibepreco(produto * estoque){
 	int i, n;
 	n=tamanho_estoque();
-	for(i = 0; i<n;i++){
-		printf("Codigo produto: %ld ", estoque[i].codigo);
-		printf("Nome do produto: %s ", estoque[i].nome);
-		printf("Preço do produto: %.2f\n", estoque[i].preco_venda);
-	} 
+  if (tamanho_estoque()	== 0){
+    printf("Sem produtos no estoque.\n");
+  }else{
+    for(i = 0; i<n;i++){
+      printf("Codigo produto: %ld \n", estoque[i].codigo);
+      printf("Nome do produto: %s \n", estoque[i].nome);
+      printf("Preço do produto: %.2f\n\n", estoque[i].preco_venda);
+    } 
+  }
 }
 
 void relatorioEstoque(produto * estoque){
@@ -44,26 +48,32 @@ void relatorioEstoque(produto * estoque){
 void menuRelatorios(produto * estoque, produto * vendidos){
 	int opc;
 	do{
-		printf("Escolha uma das Opções:\n");
+		printf("\nEscolha uma das Opções:\n");
 		printf("1 - Relatorio de vendas.\n");
-		printf("2 - Relatorio de estoque.\n");		
-		printf("3 - Sair.\n");
-    		scanf("%d", &opc);
-		
+		printf("2 - Relatorio de estoque.\n");
+		printf("3 - Exibir preço.\n");		
+		printf("4 - Sair.\n");
+		scanf("%d", &opc);
+
 		switch(opc){
 			case 1:
 				relatoriodeVendas(vendidos);
 			break;
-			
+
 			case 2:
 				relatorioEstoque(estoque);				
 			break;
-					
-			
+
+			case 3:
+			  exibepreco(estoque)	;				
+			break;
+
+
 			default:
-				if (opc != 3)
+				if (opc != 4)
 					printf("\nOpcao invalida.");
 			break;
 		}
-	}while (opc !=3);	
+	}while (opc !=4);	
 }
+

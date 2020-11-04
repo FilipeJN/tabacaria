@@ -1,6 +1,6 @@
 /* 
     Arquivo: main.c
-    Autor: Matheus Pires e Alline
+    Autor: Mateus Pires, Alline e Filipe
 
     função que faz o chamado as rotinas de execução de cadastro, visualização e venda na tabacaria
  */
@@ -11,8 +11,7 @@
 // menu principal da aplicação
 int main()
 {   
-    int x,x1;
-	char s;
+    int x,x1;	
     
     //inicializa os endereços que conterao os produtos e fornecedores
     // contem o endereco pra primeira pos do vetor respectivo
@@ -50,22 +49,14 @@ int main()
                     }
             break;
             case 2:
-                /* inserir 
-                    os 
-                    relatorios */
-                printf("\n *** Produtos vendidos:\n");
-                relatoriodeVendas(vendidos);
+               menuRelatorios(estoque, vendidos);
             break;
             case 3:
                 vendidos = venda (estoque, vendidos);
             break;
 
             case 4:
-                printf("Deseja mesmo sair? S/N\n");
-                scanf("%c", &s);
-
-                if (s == 'S')
-                    return 0;
+               	return 0;
             break;
             default:
                 printf("Opção inválida.\n");

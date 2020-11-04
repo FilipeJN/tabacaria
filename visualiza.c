@@ -43,9 +43,8 @@ void menuRelatorios(produto * estoque, produto * vendidos){
 	do{
 		printf("Escolha uma das Opções:\n");
 		printf("1 - Relatorio de vendas.");
-		printf("2 - Relatorio de estoque.");
-		printf("3 - Relatorio de lucro.");
-		printf("4 - Sair.");
+		printf("2 - Relatorio de estoque.");		
+		printf("3 - Sair.");
 		
 		switch(opc){
 			case 1:
@@ -55,17 +54,13 @@ void menuRelatorios(produto * estoque, produto * vendidos){
 			case 2:
 				relatorioEstoque(estoque);				
 			break;
-			
-			case 3:
-				relatorioLucro();
-			break;
+					
 			
 			default:
-				if (opc != 4)
+				if (opc != 3)
 					printf("\nOpcao invalida.");
 			break;
 		}
-	}while (opc !=4);	
-	//menu();
+	}while (opc !=3);	
 }
 
